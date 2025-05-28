@@ -1,7 +1,7 @@
 class Character:
     def __init__(self) -> None:
         self._life = True
-        self._gold = 100000
+        self._gold = 200
         self._atak = 0
         self._hp = 0
         self._max_hp = 0

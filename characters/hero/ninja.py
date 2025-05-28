@@ -4,8 +4,8 @@ class Ninja(Character):
     def __init__(self):
         super().__init__()
         self._atak += 15
-        self._hp = 1500
-        self._max_hp = 1500
+        self._hp = 150
+        self._max_hp = 150
         self._regeneration_hp = 5
         self._mana = 500
         self._max_mana = 500
