@@ -1,4 +1,5 @@
 from characters.characters import Character
+from characters.technik.warior_technik import WariorTechnik
 class Warior(Character):
     def __init__(self):
         super().__init__()
@@ -9,7 +10,9 @@ class Warior(Character):
         self._mana = 505
         self._max_mana = 505
         self._regeneration_mana = 15 
+        self._spell_book = WariorTechnik()
     def inf(self):
+        print("-----------------your statistic----------------------")
         print(f"max_hp = {self._max_hp} max_mana = {self._max_mana}")
         print(f"hp = {self._hp} mana = {self._mana}")
         print(f"gold = {self._gold}")
@@ -36,13 +39,16 @@ class Warior(Character):
             inp = input().lower()
             if inp == "c":
                 self.mana_potion()
+                continue
             elif inp == "d":
                 self.life_potion()
+                continue
             if inp == "a":
-                demage == self._atak
+                demage = self._atak
             elif inp == "b":
-                demage = 5
+                demage = self._spell_book.choose_technik(self)
             else:
                 print("no atak")
+                continue
             return demage
         

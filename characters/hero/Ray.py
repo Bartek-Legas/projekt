@@ -1,4 +1,5 @@
 from characters.characters import Character
+from characters.technik.ray_technik import RayTechnik
 class Ray(Character):
     def __init__(self):
         super().__init__()
@@ -11,7 +12,9 @@ class Ray(Character):
         self._regeneration_mana = 40
         self._mana_potion = 0
         self._life_potion = 0 
+        self._spell_book = RayTechnik()
     def inf(self):
+        print("-----------------your statistic----------------------")
         print(f"max_hp = {self._max_hp} max_mana = {self._max_mana}")
         print(f"hp = {self._hp} mana = {self._mana}")
         print(f"gold = {self._gold}")
@@ -38,13 +41,16 @@ class Ray(Character):
             inp = input().lower()
             if inp == "c":
                 self.mana_potion()
+                continue
             elif inp == "d":
                 self.life_potion()
+                continue
             if inp == "a":
-                demage == self._atak
+                demage = self._atak
             elif inp == "b":
-                demage = 5
+                demage = self._spell_book.choose_technik(self)
             else:
                 print("no atak")
+                continue
             return demage
         
